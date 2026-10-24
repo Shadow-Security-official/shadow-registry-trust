@@ -42,12 +42,16 @@ After a switchover to the backup authority, this repository also publishes:
 
 These files are served over HTTPS only.
 
-## Primary publication
+## Primary Registry CA
 
-Under normal conditions, the certificate and revocation list of the primary Registry CA are published at:
+The certificate and the revocation list of the primary Registry CA are published on two hosts:
 
-- <http://cipher.shadow-security.fr/certs/registry.cer>
-- <http://cipher.shadow-security.fr/crl/registry.crl>
+| File | Primary host | Mirror |
+|---|---|---|
+| Certificate (DER) | <http://cipher.shadow-security.fr/certs/registry.cer> | <https://shadow-security-official.github.io/shadow-registry-trust/certs/registry.cer> |
+| Revocation list (DER) | <http://cipher.shadow-security.fr/crl/registry.crl> | <https://shadow-security-official.github.io/shadow-registry-trust/crl/registry.crl> |
+
+If both hosts return a valid revocation list, the one with the highest number prevails.
 
 ## License
 
